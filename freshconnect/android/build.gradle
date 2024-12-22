@@ -1,0 +1,24 @@
+buildscript {
+    repositories {
+        google() // Required for Google dependencies
+        mavenCentral() // Required for standard libraries
+    }
+    dependencies {
+        // Android Gradle Plugin (replace <version> with your Gradle version)
+        classpath "com.android.tools.build:gradle:8.1.1"
+        // Google Services Plugin
+        classpath "com.google.gms.google-services:4.3.15"
+    }
+}
+
+allprojects {
+    repositories {
+        google()
+        mavenCentral()
+    }
+}
+
+// Clean task for removing the build directory
+tasks.register("clean", Delete) {
+    delete rootProject.buildDir
+}
